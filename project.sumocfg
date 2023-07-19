@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- generated on 2023-05-21 02:33:33 by Eclipse SUMO GUI Version 1.16.0
+-->
+
+<configuration xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://sumo.dlr.de/xsd/sumoConfiguration.xsd">
+
+    <input>
+        <net-file value="project.net.xml"/>
+        <route-files value="project.rou.xml"/>
+        <gui-settings-file value="gui.xml"/>       
+        <additional-files value="statistics.add.xml"/>    
+        <!--seed value="1"/-->
+        <!--random value="true"/-->
+        
+    </input>   
+    <time>--
+          <step-length value="0.1"/>
+          <!--end value="1000"/-->
+    </time>
+    <output>
+        <summary-output.period value="100"/>
+        <summary value="${HOME}/Documents/dev/omnetWS/RoadConstruction/results/template/xml/-summary.xml"/>
+        <output-prefix value="TIME"/>
+        <lanechange-output value="${HOME}/Documents/dev/omnetWS/RoadConstruction/results/template/xml/-lanechange.xml"/>
+
+        <!---save-state.period value="200"/-->        
+        <!--statistic-output value="${HOME}/Documents/dev/omnetWS/RoadConstruction/results/template/xml/-statistic.xml"/-->
+    </output>
+</configuration>

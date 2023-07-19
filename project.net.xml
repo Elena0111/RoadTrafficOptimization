@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+
+<net version="1.16" junctionCornerDetail="5" limitTurnSpeed="5.50" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://sumo.dlr.de/xsd/net_file.xsd">
+
+    <location netOffset="0.00,0.00" convBoundary="0.00,50.00,4200.00,50.00" origBoundary="-10000000000.00,-10000000000.00,10000000000.00,10000000000.00" projParameter="!"/>
+
+    <edge id="1st_part" from="0" to="5" priority="-1">
+        <lane id="1st_part_0" index="0" speed="36.11" length="1500.00" shape="2000.00,45.20 3500.00,45.20"/>
+        <lane id="1st_part_1" index="1" speed="36.11" length="1500.00" shape="2000.00,48.40 3500.00,48.40"/>
+    </edge>
+    <edge id="1st_part1" from="5" to="1" priority="-1">
+        <lane id="1st_part1_0" index="0" speed="25.0" length="500.00" shape="3500.00,45.20 4000.00,45.20"/>
+        <lane id="1st_part1_1" index="1" speed="25.0" length="500.00" shape="3500.00,48.40 4000.00,48.40"/>
+    </edge>
+    <edge id="2nd_part" from="2" to="3" priority="-1">
+        <lane id="2nd_part_0" index="0" speed="36.11" length="2000.00" shape="4200.00,45.20 6200.00,45.20"/>
+        <lane id="2nd_part_1" index="1" speed="36.11" length="2000.00" shape="4200.00,48.40 6200.00,48.40"/>
+    </edge>
+    <edge id="work_zone" from="1" to="2" priority="-1">
+        <lane id="work_zone_0" index="0" allow="pedestrian" speed="0.1" length="200.00" shape="4000.00,45.20 4200.00,45.20"/>
+        <lane id="work_zone_1" index="1" speed="16.67" length="200.00" shape="4000.00,48.40 4200.00,48.40"/>
+    </edge>
+
+    <junction id="0" type="dead_end" x="0.00" y="50.00" incLanes="" intLanes="" shape="2000.00,50.00 2000.00,43.60"/>
+    <junction id="1" type="priority" x="4000.00" y="50.00" incLanes="1st_part1_0 1st_part1_1" intLanes="" shape="4000.00,50.00 4000.00,43.60 4000.00,50.00">
+        <request index="0" response="00" foes="00"/>
+       <request index="1" response="00" foes="00"/>
+        
+    </junction>
+    <junction id="2" type="priority" x="4200.00" y="50.00" incLanes="work_zone_0 work_zone_1" intLanes="" shape="4200.00,50.00 4200.00,43.60 4200.00,50.00">
+        <request index="0" response="00" foes="00"/>
+        <request index="1" response="00" foes="00"/>
+    </junction>
+    <junction id="3" type="dead_end" x="6200.00" y="50.00" incLanes="2nd_part_0 2nd_part_1" intLanes="" shape="6200.00,43.60 6200.00,50.00"/>
+    <junction id="5" type="priority" x="3500.00" y="50.00" incLanes="1st_part_0 1st_part_1" intLanes="" shape="3500.00,50.00 3500.00,43.60 3500.00,50.00">
+        <request index="0" response="00" foes="00"/>
+        <request index="1" response="00" foes="00"/>
+    </junction>
+
+    <connection from="1st_part" to="1st_part1" fromLane="0" toLane="0" dir="s" state="M"/>
+    <connection from="1st_part" to="1st_part1" fromLane="1" toLane="1" dir="s" state="M"/>
+    <connection from="1st_part1" to="work_zone" fromLane="0" toLane="0" dir="s" state="M"/>
+    <connection from="1st_part1" to="work_zone" fromLane="1" toLane="1" dir="s" state="M"/>
+
+    <connection from="work_zone" to="2nd_part" fromLane="0" toLane="0" dir="s" state="M"/>
+    <connection from="work_zone" to="2nd_part" fromLane="1" toLane="1" dir="s" state="M"/>
+
+</net>

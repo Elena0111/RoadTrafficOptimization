@@ -1,0 +1,8 @@
+
+<additional>
+  
+   <inductionLoop id="il_1" lane="work_zone_1" pos="0" length="200" period="500.0"
+       file="${HOME}/Documents/dev/omnetWS/RoadConstruction/results/template/xml/-loop.xml"
+       friendlyPos="true"/>
+    
+</additional>
